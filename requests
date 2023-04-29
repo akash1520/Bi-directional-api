@@ -1,0 +1,5 @@
+@user = doe
+@password = 12345678
+
+GET https://httpbin.org/basic-auth/{{user}}/{{password}}
+Authorization: Basic {{user}}{{password}}

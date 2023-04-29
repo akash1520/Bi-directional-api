@@ -1,0 +1,15 @@
+@user = doe
+@password = 12345678
+
+POST http://localhost:8005/signup
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.example.com/webservice">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <web:SignUpRequest>
+            <web:Name>John Doe</web:Name>
+            <web:Email>johndoe@example.com</web:Email>
+            <web:Password>password123</web:Password>
+        </web:SignUpRequest>
+    </soapenv:Body>
+</soapenv:Envelope>
