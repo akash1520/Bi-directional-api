@@ -1,4 +1,4 @@
-const { default: axios } = require("axios");
+const axios = require("axios");
 const express = require("express");
 const router = new express.Router();
 const { graphqlHTTP } = require('express-graphql');
@@ -22,7 +22,7 @@ const createAPI = async (args) => {
     try {
       const response = await axios.get(args.Url);
       console.log(`GET request to ${args.Url} successful`);
-      console.log(response);
+      console.log(response.data);
       return response.data;
     } catch (error) {
       console.error(`Error sending GET request to ${args.Url}: ${error.message}`);

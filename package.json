@@ -9,6 +9,7 @@
   "author": "Akash Parmar",
   "license": "ISC",
   "dependencies": {
+    "axios": "^1.4.0",
     "body-parser": "^1.20.2",
     "body-parser-xml": "^2.0.5",
     "cookie-parser": "^1.4.6",
