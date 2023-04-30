@@ -8,6 +8,7 @@ const schema = buildSchema(`
 type API {
     Url: String!
     Method: String!
+    Data:String!
   }
   
   type Query {
@@ -18,31 +19,21 @@ type API {
   }  
 `);
 
-const createAPI = async (args) => {
-    try {
+
+
+const createAPI = async(args) => {
+    // Perform any necessary operations with the arguments here
+    
       const response = await axios.get(args.Url);
-      console.log(`GET request to ${args.Url} successful`);
-      console.log(response.data);
-      return response.data;
-    } catch (error) {
-      console.error(`Error sending GET request to ${args.Url}: ${error.message}`);
-      throw error;
-    }
-  };
 
-// const createAPI = (args) => {
-//     // Perform any necessary operations with the arguments here
-//     console.log(`Creating new API with URL: ${args.url}`);
- 
+    const api = {
+      Url: args.Url,
+      Method: args.Method,
+      Data:JSON.stringify(response.data)
+    };
+    return api;
 
-//     // Create a new API object with a unique ID
-//     const api = {
-//       Url: args.Url,
-//       Method: args.Method
-//     };
-  
-//     return api;
-//   };
+ };
 
 const root = {
     createAPI: createAPI

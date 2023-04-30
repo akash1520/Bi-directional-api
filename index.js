@@ -17,7 +17,8 @@ app.use(restRouter)
 
 app.post("/",(req,res)=>{
     if(req.headers['content-type']==='application/xml')res.redirect("/soap")
-    else res.redirect("/graphql")
+    else if(req.headers['type']==='graphql')res.redirect("/graphql")
+    else res.redirect("/rest")
 })
 
 
