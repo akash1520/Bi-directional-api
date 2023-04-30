@@ -8,6 +8,6 @@ const payload = {
   }
  };
 
-const token = jwt.sign(payload, process.env.PRIVATE_KEY, { expiresIn: 240 });
+const token = jwt.sign(payload, process.env.PRIVATE_KEY, { expiresIn: 2400 });
 
 console.log(token);
